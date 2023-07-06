@@ -5,6 +5,11 @@ function App() {
   const [albums, setAlbums] = useState([]);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+// Helper function to generate random names
+function getRandomName() {
+  const names = ['John', 'Emma', 'Sophia', 'Michael', 'Olivia', 'William', 'Ava', 'James', 'Isabella'];
+  return names[Math.floor(Math.random() * names.length)];
+}
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/albums')
@@ -68,10 +73,6 @@ function App() {
   );
 }
 
-// Helper function to generate random names
-function getRandomName() {
-  const names = ['John', 'Emma', 'Sophia', 'Michael', 'Olivia', 'William', 'Ava', 'James', 'Isabella'];
-  return names[Math.floor(Math.random() * names.length)];
-}
+
 
 export default App;
